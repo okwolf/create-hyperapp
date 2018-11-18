@@ -1,0 +1,28 @@
+{
+  "name": "create-hyperapp",
+  "version": "0.1.0",
+  "description": "Create Hyperapps with no build configuration",
+  "bin": {
+    "create-hyperapp": "./bin/index.js"
+  },
+  "dependencies": {
+    "colorette": "=1.0.7",
+    "fs-extra": "=7.0.1"
+  },
+  "scripts": {
+    "clean": "npx rimraf node_modules",
+    "format": "npx prettier --write **/*.js",
+    "format:check": "npx prettier --list-different **/*.js",
+    "release": "./pre-flight-tests && npm run format:check && git tag $npm_package_version && git push && git push --tags && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okwolf/create-hyperapp.git"
+  },
+  "author": "Wolfgang Wedemeyer <wolf@okwolf.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/okwolf/create-hyperapp/issues"
+  },
+  "homepage": "https://github.com/okwolf/create-hyperapp"
+}

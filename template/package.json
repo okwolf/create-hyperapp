@@ -1,0 +1,18 @@
+{
+  "name": "template",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "hyperapp-scripts start",
+    "build": "hyperapp-scripts build",
+    "test": "hyperapp-scripts test"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
