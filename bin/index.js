@@ -34,13 +34,20 @@ const packageJson = require(packageJsonPath);
 packageJson.name = name;
 fs.writeJsonSync(packageJsonPath, packageJson, { spaces: 2 });
 
-const runNpmCommand = command =>
-  spawnSync("npm", command.split(" "), {
+const installPackageWithFlags = (package, ...args) => {
+  const installResults = spawnSync("npm", ["install", package, ...args], {
     cwd: projectPath,
-    stdio: "inherit"
+    stdio: "inherit",
+    shell: true
   });
-runNpmCommand("install --save hyperapp");
-runNpmCommand("install --save-dev hyperapp-scripts");
+  if (installResults.error) {
+    exitWithError(
+      `Error while installing ${cyan(package)}: ${installResults.error}`
+    );
+  }
+};
+installPackageWithFlags("hyperapp", "--save");
+installPackageWithFlags("hyperapp-scripts", "--save-dev");
 
 console.log();
 console.log(`Success! Created ${name} in ${process.cwd()}`);
