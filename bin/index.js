@@ -18,7 +18,9 @@ if (!name) {
   exitWithError("Please provide a name for your new Hyperapp project!");
 }
 if (fs.existsSync(projectPath)) {
-  exitWithError(`Project ${name} already exists, please make a new one!`);
+  exitWithError(
+    `Project ${name} already exists, please pick a different name!`
+  );
 }
 
 console.log(`Creating a Hyperapp in ${green(projectPath)}.`);
