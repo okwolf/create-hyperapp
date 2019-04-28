@@ -1,9 +1,8 @@
 # Hyperapp Example
 
-This project was bootstrapped with [`hyperapp-scripts`](https://github.com/okwolf/hyperapp-scripts).
+This project was bootstrapped with [`hyperapp-scripts`](https://github.com/okwolf/hyperapp-scripts), a project built on top of [`create-react-app`](https://facebook.github.io/create-react-app/docs/getting-started) that supports many of the same features.
 
 Below you will find some information on how to perform common tasks.
-You can find the most recent version of this guide [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 ## Available Scripts
 

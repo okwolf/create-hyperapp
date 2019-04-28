@@ -83,13 +83,13 @@ The page will automatically reload if you make changes to the code. You will see
 
 ### `npm test` or `yarn test`
 
-Runs the test watcher in an interactive mode. By default, runs tests related to files changed since the last commit.
+Runs the test watcher in an interactive mode. By default only tests related to files changed since the last commit are run.
 
 [Read more about testing.](https://facebook.github.io/create-react-app/docs/running-tests)
 
 ### `npm run build` or `yarn build`
 
-Builds the app for production to the `build` folder. It bundles in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes. Your app is ready to be deployed.
+Builds the app for production to the `build` folder. It bundles in production mode and optimizes the build for the best performance. The build is minified and the filenames include unique hashes based on the contents. Your app is ready to be [deployed](https://facebook.github.io/create-react-app/docs/deployment).
 
 ## License
 
