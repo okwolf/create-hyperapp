@@ -10,10 +10,13 @@
     "fs-extra": "=7.0.1"
   },
   "scripts": {
-    "clean": "npx rimraf node_modules",
+    "clean": "npx rimraf node_modules example",
     "format": "npx prettier --write **/*.js",
     "format:check": "npx prettier --list-different **/*.js",
-    "release": "./pre-flight-tests && npm run format:check && git tag $npm_package_version && git push && git push --tags && npm publish"
+    "create": "npm i && ./bin/index.js example",
+    "test": "npm run clean && npm run create && cd example && npm run build && CI=1 npm test",
+    "check": "npm run format:check && npm test",
+    "release": "./pre-flight-tests && npm run check && git tag $npm_package_version && git push && git push --tags && npm publish"
   },
   "repository": {
     "type": "git",
