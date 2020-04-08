@@ -1,6 +1,6 @@
 {
   "name": "create-hyperapp",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Create Hyperapps with no build configuration",
   "bin": {
     "create-hyperapp": "./bin/index.js"
