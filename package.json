@@ -1,6 +1,6 @@
 {
   "name": "create-hyperapp",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Create Hyperapps with no build configuration",
   "bin": {
     "create-hyperapp": "./bin/index.js"
@@ -13,13 +13,13 @@
     "cross-env": "=7.0.2"
   },
   "scripts": {
-    "clean": "npx rimraf node_modules example",
-    "format": "npx prettier --write bin/*.js example/src/**/*.js",
-    "format:check": "npx prettier --list-different bin/*.js example/src/**/*.js",
+    "clean": "npx --ignore-existing --quiet rimraf node_modules example",
+    "format": "npx prettier --write *.js bin/*.js template/src/**/*.{css,js}",
+    "format:check": "npx prettier --list-different *.js bin/*.js template/src/**/*.{css,js}",
     "create": "npm i && node bin/index.js example",
     "test": "npm run clean && npm run create && cd example && npm run build && cross-env CI=1 npm test",
     "check": "npm run format:check && npm test",
-    "release": "node pre-flight-tests && npm run check && git tag $npm_package_version && git push && git push --tags && npm publish"
+    "release": "node release"
   },
   "prettier": {
     "trailingComma": "none",
